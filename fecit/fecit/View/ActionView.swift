@@ -9,8 +9,20 @@ import SwiftUI
 
 struct ActionView: View {
     var body: some View {
-        Text("test")
+        VStack {
+            VStack {
+                CalendarHeaderView(currentDate: .constant(Date()), addWeek: false)
+                    .padding(10)
+                WeekdayView()
+            }
+            .background(Color("MainBlue"))
+            Spacer()
         }
+    }
+}
+
+#Preview {
+    ActionView()
 }
 
 
