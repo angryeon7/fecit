@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		956B1BC22BD58B9E0047D5A0 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BC12BD58B9E0047D5A0 /* CalendarHeaderView.swift */; };
 		956B1BC42BD595090047D5A0 /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BC32BD595090047D5A0 /* WeekdayView.swift */; };
+		956B1BCA2BD5AE5D0047D5A0 /* MonthDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */; };
 		95A078742BD0E7A400E841B9 /* fecitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078732BD0E7A400E841B9 /* fecitApp.swift */; };
 		95A078762BD0E7A400E841B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078752BD0E7A400E841B9 /* ContentView.swift */; };
 		95A078782BD0E7A600E841B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A078772BD0E7A600E841B9 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		956B1BC12BD58B9E0047D5A0 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		956B1BC32BD595090047D5A0 /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
+		956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDayCell.swift; sourceTree = "<group>"; };
 		95A078702BD0E7A400E841B9 /* fecit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fecit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A078732BD0E7A400E841B9 /* fecitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fecitApp.swift; sourceTree = "<group>"; };
 		95A078752BD0E7A400E841B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				95A078AA2BD13D0700E841B9 /* MemoView.swift */,
 				956B1BC12BD58B9E0047D5A0 /* CalendarHeaderView.swift */,
 				956B1BC32BD595090047D5A0 /* WeekdayView.swift */,
+				956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				956B1BC22BD58B9E0047D5A0 /* CalendarHeaderView.swift in Sources */,
 				95A078A92BD13CFB00E841B9 /* ActionView.swift in Sources */,
 				95A078762BD0E7A400E841B9 /* ContentView.swift in Sources */,
+				956B1BCA2BD5AE5D0047D5A0 /* MonthDayCell.swift in Sources */,
 				95A078742BD0E7A400E841B9 /* fecitApp.swift in Sources */,
 				95A078A72BD13B9400E841B9 /* MainTabView.swift in Sources */,
 			);
