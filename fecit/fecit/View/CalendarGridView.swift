@@ -45,4 +45,3 @@ struct CalendarGridView: View {
 #Preview() {
     CalendarGridView(currentDate: .constant(Date()))
 }
-

@@ -32,4 +32,3 @@ struct WeekdayView_Previews: PreviewProvider {
       WeekdayView()
   }
 }
-

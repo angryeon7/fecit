@@ -16,7 +16,6 @@ struct CalendarHeaderView: View {
 
         HStack {
             Button {
-                currentDate = Date.now
             } label: {
                 Text("Today")
             }
@@ -53,10 +52,16 @@ struct CalendarHeaderView: View {
             .padding(.trailing, 10)
         }.background(Color("MainBlue"))
     }
+    
+    func changeMonth(value: Int) {
+        guard let newMonth = Calendar.current.date(byAdding: .month, value: value, to: currentDate) else {
+            return
+        }
+
+        currentDate = newMonth
+    }
 }
 
 #Preview {
     CalendarHeaderView(currentDate: .constant(Date()), addWeek: false)
 }
-
-
