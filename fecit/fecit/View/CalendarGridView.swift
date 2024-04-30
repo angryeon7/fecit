@@ -8,40 +8,35 @@
 import SwiftUI
 
 struct CalendarGridView: View {
-    @Binding var currentDate: Date
-    private let weekdays = 7
+    let weeks: [Week]
+    let informations: [YearMonthDay: [(String, Color)]]
 
     var body: some View {
-        let daysOfMonth = numberOfDays()
-        let firstWeekDay = firstWeekdayOfMonth(in: currentDate)
-
-        LazyVGrid(columns: Array(repeating: GridItem(), count: weekdays), spacing: 0, content: {
-            ForEach(0 ..< daysOfMonth + firstWeekDay, id: \.self) { index in
-                let isBeforeFirstWeekDay = index < firstWeekDay
-                
-                if isBeforeFirstWeekDay {
-                    RoundedRectangle(cornerRadius: 5)
-                        .foregroundColor(Color.clear)
-                } else {
-                    MonthDayCellView(day: index - firstWeekDay + 1)
-                        .frame(height: UIScreen.main.bounds.height / CGFloat(weekdays))
-                }
-            }
-        })
-    }
-
-    func numberOfDays() -> Int {
-        return Calendar.current.range(of: .day, in: .month, for: currentDate)?.count ?? 0
-    }
-
-    func firstWeekdayOfMonth(in date: Date) -> Int {
-        let components = Calendar.current.dateComponents([.year, .month], from: date)
-        let firstDayOfMonth = Calendar.current.date(from: components)!
-
-        return Calendar.current.component(.weekday, from: firstDayOfMonth) - 1
+        VStack(spacing: 0) {
+            ForEach(weeks, content: { week in
+                WeekView(week: week, informations: informations,totalWeeksCount: weeks.count)
+            })
+        }
     }
 }
 
-#Preview() {
-    CalendarGridView(currentDate: .constant(Date()))
+struct WeekView: View {
+    let week: Week
+    let informations: [YearMonthDay: [(String, Color)]]
+    let totalWeeksCount: Int
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(week.days.indices) { index in
+                let day = week.days[index]
+                let isFirstDay = index == 0
+                let isLastDay = index == week.days.count - 1
+
+                MonthDayCellView(day: day, informations: informations)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.height / CGFloat(totalWeeksCount))
+                    .foregroundColor(isFirstDay ? .red : (isLastDay ? .blue : .black))
+            }
+        }
+    }
 }
