@@ -14,6 +14,10 @@ struct Day {
     var isEnabled = true
     var isCurrent = false
     var onSelect: (() -> Void) = {}
+    var yearMonthDay: YearMonthDay {
+        let today = Date()
+        return YearMonthDay(year: today.year, month: today.month, day: number)
+    }
 }
 
 struct Week: Identifiable {
