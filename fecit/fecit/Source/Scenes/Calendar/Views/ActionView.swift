@@ -11,8 +11,6 @@ public struct ActionView: View {
     @ObservedObject public var viewModel: CalendarViewModel
     @State private var offsetY: CGFloat = 0
     
-    var informations = [YearMonthDay: [(String, Color)]]()
-    
     public var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
@@ -26,7 +24,10 @@ public struct ActionView: View {
                 ScrollViewReader { scrollViewProxy in
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
-                            CalendarGridView(weeks: viewModel.current.weeks, informations: informations)
+                            CalendarGridView(weeks: viewModel.current.weeks, events: groupEventsByDate(events: viewModel.readEvents(for: YearMonthDay.current)))
+                                                            .frame(maxWidth: .infinity)
+                                                            .animation(.default)
+                                                            .id("MonthView")
                                 .frame(maxWidth: .infinity)
                                 .animation(.default)
                                 .id("MonthView")
@@ -55,36 +56,20 @@ public struct ActionView: View {
 
     public init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
-        
-        // 더미데이터
-        var date = YearMonthDay.current
-        informations[date] = []
-        informations[date]?.append(("Hello", Color.orange))
-        informations[date]?.append(("World", Color.blue))
-
-        date = date.addDay(value: 3)
-        informations[date] = []
-        informations[date]?.append(("Test", Color.pink))
-        
-        date = date.addDay(value: 8)
-        informations[date] = []
-        informations[date]?.append(("Play", Color.green))
-        
-        date = date.addDay(value: 5)
-        informations[date] = []
-        informations[date]?.append(("Home", Color.red))
-
-        date = date.addDay(value: -23)
-        informations[date] = []
-        informations[date]?.append(("Meet at 8", Color.purple))
-        
-        date = date.addDay(value: -5)
-        informations[date] = []
-        informations[date]?.append(("Home", Color.yellow))
-
-        date = date.addDay(value: -10)
-        informations[date] = []
-        informations[date]?.append(("Baseball", Color.green))
+    }
+    
+    private func groupEventsByDate(events: [Event]) -> [YearMonthDay: [Event]] {
+        var groupedEvents = [YearMonthDay: [Event]]()
+        for event in events {
+            let date = YearMonthDay(year: event.date.year, month: event.date.month, day: event.date.day)
+            if var eventsForDate = groupedEvents[date] {
+                eventsForDate.append(event)
+                groupedEvents[date] = eventsForDate
+            } else {
+                groupedEvents[date] = [event]
+            }
+        }
+        return groupedEvents
     }
 }
 

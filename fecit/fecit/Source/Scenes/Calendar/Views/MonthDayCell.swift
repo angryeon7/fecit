@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MonthDayCellView: View {
     let day: Day
-    let informations: [YearMonthDay: [(String, Color)]]
+    let events: [Event]?
 
     var body: some View {
         ZStack {
@@ -28,17 +28,16 @@ struct MonthDayCellView: View {
                     .font(.system(size: 14))
                     .frame(width: 25, height: 25)
                     .background(day.isSelected ? Color("MainBlue") : Color.clear)
-                    .foregroundColor(day.isSelected ? Color.white : Color.black)
                     .cornerRadius(20)
 
-                if let dayInformations = informations[day.yearMonthDay] {
-                    ForEach(dayInformations, id: \.0) { info, color in
-                        Text(info)
+                if let events = events {
+                    ForEach(events, id: \.id) { event in
+                        Text(event.title)
                             .lineLimit(1)
                             .foregroundColor(.white)
                             .font(.system(size: 8, weight: .bold, design: .default))
                             .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
-                            .background(color.opacity(0.75))
+                            .background(event.color.opacity(0.75))
                             .cornerRadius(4)
                     }
                 }

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct CalendarGridView: View {
     let weeks: [Week]
-    let informations: [YearMonthDay: [(String, Color)]]
+    let events: [YearMonthDay: [Event]]
 
     var body: some View {
         VStack(spacing: 0) {
             ForEach(weeks, content: { week in
-                WeekView(week: week, informations: informations,totalWeeksCount: weeks.count)
+                WeekView(week: week, events: events[week.days.first?.yearMonthDay ?? YearMonthDay.current], totalWeeksCount: weeks.count)
             })
         }
     }
@@ -22,7 +22,7 @@ struct CalendarGridView: View {
 
 struct WeekView: View {
     let week: Week
-    let informations: [YearMonthDay: [(String, Color)]]
+    let events: [Event]?
     let totalWeeksCount: Int
 
     var body: some View {
@@ -32,7 +32,7 @@ struct WeekView: View {
                 let isFirstDay = index == 0
                 let isLastDay = index == week.days.count - 1
 
-                MonthDayCellView(day: day, informations: informations)
+                MonthDayCellView(day: day, events: events?.filter { $0.date == day.yearMonthDay })
                     .frame(maxWidth: .infinity)
                     .frame(height: UIScreen.main.bounds.height / CGFloat(totalWeeksCount))
                     .foregroundColor(isFirstDay ? .red : (isLastDay ? .blue : .black))
