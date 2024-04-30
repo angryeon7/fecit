@@ -19,14 +19,17 @@ struct MonthDayCellView: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 0)
                         .stroke(
-                            day.isSelected ? Color.blue : Color.clear,
-                            lineWidth: day.isSelected ? 1 : 0
+                            Color.clear,
+                            lineWidth: 0
                         )
                 )
             VStack {
                 Text("\(day.number)")
                     .font(.system(size: 14))
-                    .padding(.top, 5)
+                    .frame(width: 25, height: 25)
+                    .background(day.isSelected ? Color("MainBlue") : Color.clear)
+                    .foregroundColor(day.isSelected ? Color.white : Color.black)
+                    .cornerRadius(20)
 
                 if let dayInformations = informations[day.yearMonthDay] {
                     ForEach(dayInformations, id: \.0) { info, color in
