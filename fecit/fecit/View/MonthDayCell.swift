@@ -8,16 +8,42 @@
 import SwiftUI
 
 struct MonthDayCellView: View {
-    var day: Int
+    let day: Day
+    let informations: [YearMonthDay: [(String, Color)]]
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 5)
-                .fill(Color.white)
+            Rectangle()
+                .foregroundColor(day.isCurrent ? Color("SelectedGray") : .clear)
+                .cornerRadius(0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 0)
+                        .stroke(
+                            day.isSelected ? Color.blue : Color.clear,
+                            lineWidth: day.isSelected ? 1 : 0
+                        )
+                )
+            VStack {
+                Text("\(day.number)")
+                    .font(.system(size: 14))
+                    .padding(.top, 5)
 
-            Text("\(day)")
-                .fontWeight(.semibold)
-                .offset(y: -40)
+                if let dayInformations = informations[day.yearMonthDay] {
+                    ForEach(dayInformations, id: \.0) { info, color in
+                        Text(info)
+                            .lineLimit(1)
+                            .foregroundColor(.white)
+                            .font(.system(size: 8, weight: .bold, design: .default))
+                            .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
+                            .background(color.opacity(0.75))
+                            .cornerRadius(4)
+                    }
+                }
+                Spacer()
+            }
         }
+        .background(Color.clear)
+        .opacity(day.isEnabled ? 1 : 0.25)
+        .onTapGesture(perform: day.onSelect)
     }
 }
