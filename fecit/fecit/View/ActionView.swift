@@ -53,6 +53,36 @@ public struct ActionView: View {
 
     public init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
+        
+        // 더미데이터
+        var date = YearMonthDay.current
+        informations[date] = []
+        informations[date]?.append(("Hello", Color.orange))
+        informations[date]?.append(("World", Color.blue))
+
+        date = date.addDay(value: 3)
+        informations[date] = []
+        informations[date]?.append(("Test", Color.pink))
+        
+        date = date.addDay(value: 8)
+        informations[date] = []
+        informations[date]?.append(("Play", Color.green))
+        
+        date = date.addDay(value: 5)
+        informations[date] = []
+        informations[date]?.append(("Home", Color.red))
+
+        date = date.addDay(value: -23)
+        informations[date] = []
+        informations[date]?.append(("Meet at 8", Color.purple))
+        
+        date = date.addDay(value: -5)
+        informations[date] = []
+        informations[date]?.append(("Home", Color.yellow))
+
+        date = date.addDay(value: -10)
+        informations[date] = []
+        informations[date]?.append(("Baseball", Color.green))
     }
 }
 
