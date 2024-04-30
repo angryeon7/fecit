@@ -48,6 +48,8 @@ public struct ActionView: View {
                     )
                 }
             }
+            ScheduleCreationButton()
+                .padding(.bottom, 10)
         }
     }
 
@@ -85,6 +87,27 @@ public struct ActionView: View {
         informations[date]?.append(("Baseball", Color.green))
     }
 }
+
+struct ScheduleCreationButton: View {
+    var body: some View {
+        Button(action: {
+            // TODO: - 일정 만들기 로직 작성
+        }) {
+            HStack {
+                Image(systemName: "square.and.pencil")
+                Text("New Action")
+                Image(systemName: "chevron.up")
+                    .padding(.leading,15)
+            }
+            .foregroundColor(.white)
+            .padding([.leading,.trailing],25)
+            .padding([.top,.bottom],15)
+            .background(Color("MainBlue"))
+            .cornerRadius(25)
+        }
+    }
+}
+
 
 public struct ActionView_Previews: PreviewProvider {
     static public var previews: some View {
