@@ -18,17 +18,8 @@ struct WeekdayView: View {
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.white)
                 }
-                .padding(.bottom, 10)
             }
-
             Divider()
-        }
-        .background(Color("MainBlue"))
+        }        
     }
-}
-
-struct WeekdayView_Previews: PreviewProvider {
-  static var previews: some View {
-      WeekdayView()
-  }
 }
