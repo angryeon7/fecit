@@ -11,6 +11,7 @@
 		956B1BC42BD595090047D5A0 /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BC32BD595090047D5A0 /* WeekdayView.swift */; };
 		956B1BC62BD5A8C20047D5A0 /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BC52BD5A8C20047D5A0 /* CalendarGridView.swift */; };
 		956B1BCA2BD5AE5D0047D5A0 /* MonthDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */; };
+		956B1BD92BE0A9110047D5A0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */; };
 		95A078742BD0E7A400E841B9 /* fecitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078732BD0E7A400E841B9 /* fecitApp.swift */; };
 		95A078762BD0E7A400E841B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078752BD0E7A400E841B9 /* ContentView.swift */; };
 		95A078782BD0E7A600E841B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A078772BD0E7A600E841B9 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		956B1BC32BD595090047D5A0 /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		956B1BC52BD5A8C20047D5A0 /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
 		956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDayCell.swift; sourceTree = "<group>"; };
+		956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		95A078702BD0E7A400E841B9 /* fecit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fecit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A078732BD0E7A400E841B9 /* fecitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fecitApp.swift; sourceTree = "<group>"; };
 		95A078752BD0E7A400E841B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				956B1BC32BD595090047D5A0 /* WeekdayView.swift */,
 				956B1BC52BD5A8C20047D5A0 /* CalendarGridView.swift */,
 				956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */,
+				956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				956B1BC42BD595090047D5A0 /* WeekdayView.swift in Sources */,
 				956B1BC22BD58B9E0047D5A0 /* CalendarHeaderView.swift in Sources */,
 				95A078A92BD13CFB00E841B9 /* ActionView.swift in Sources */,
+				956B1BD92BE0A9110047D5A0 /* Date+Extensions.swift in Sources */,
 				956B1BC62BD5A8C20047D5A0 /* CalendarGridView.swift in Sources */,
 				95A078762BD0E7A400E841B9 /* ContentView.swift in Sources */,
 				956B1BCA2BD5AE5D0047D5A0 /* MonthDayCell.swift in Sources */,
