@@ -40,16 +40,16 @@ public struct ActionView: View {
                         DragGesture()
                             .onChanged { value in
                                 let translation = value.translation.height
-                                if offsetY <= 10 && translation > 20 {
+                                if offsetY <= 20 && translation > 10 {
                                     viewModel.previousPage()
-                                } else if offsetY >= value.translation.height && translation < -20 {
+                                } else if offsetY >= value.translation.height && translation < -10 {
                                     viewModel.nextPage()
                                 }
                             }
                     )
                 }
             }
-            ScheduleCreationButton()
+            ScheduleCreationButton(viewModel: viewModel)
                 .padding(.bottom, 10)
         }
     }
@@ -74,9 +74,11 @@ public struct ActionView: View {
 }
 
 struct ScheduleCreationButton: View {
+    @ObservedObject var viewModel: CalendarViewModel
+
     var body: some View {
         Button(action: {
-            // TODO: - 일정 만들기 로직 작성
+            viewModel.createRandomEvent()
         }) {
             HStack {
                 Image(systemName: "square.and.pencil")
@@ -92,7 +94,6 @@ struct ScheduleCreationButton: View {
         }
     }
 }
-
 
 public struct ActionView_Previews: PreviewProvider {
     static public var previews: some View {
