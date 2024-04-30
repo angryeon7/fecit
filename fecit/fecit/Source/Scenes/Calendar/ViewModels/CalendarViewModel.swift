@@ -10,6 +10,7 @@ import SwiftUI
 final public class CalendarViewModel: ObservableObject {
     @Published public var selectedDate: Date?
     @Published var current: Page
+    @Published var events: [Event] = [] 
     
     var formattedDate: String {
         let dateFormatter = DateFormatter()
@@ -86,5 +87,20 @@ final public class CalendarViewModel: ObservableObject {
             selected: selectedDate,
             select: update(date:)
         )
+    }
+    
+    func createEvent(title: String, color: Color, date: YearMonthDay) {
+        let event = Event(title: title, color: color, date: date)
+        events.append(event)
+    }
+    
+    func updateEvent(event: Event, newTitle: String, newColor: Color, newDate: YearMonthDay) {
+    }
+    
+    func deleteEvent(event: Event) {
+    }
+    
+    func readEvents(for date: YearMonthDay) -> [Event] {
+        return events
     }
 }
