@@ -17,7 +17,6 @@
 		956B1BD72BE0A8950047D5A0 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BD62BE0A8950047D5A0 /* Day.swift */; };
 		956B1BD92BE0A9110047D5A0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */; };
 		95A078742BD0E7A400E841B9 /* fecitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078732BD0E7A400E841B9 /* fecitApp.swift */; };
-		95A078762BD0E7A400E841B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078752BD0E7A400E841B9 /* ContentView.swift */; };
 		95A078782BD0E7A600E841B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A078772BD0E7A600E841B9 /* Assets.xcassets */; };
 		95A0787B2BD0E7A600E841B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A0787A2BD0E7A600E841B9 /* Preview Assets.xcassets */; };
 		95A078A72BD13B9400E841B9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A078A62BD13B9400E841B9 /* MainTabView.swift */; };
@@ -37,7 +36,6 @@
 		956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		95A078702BD0E7A400E841B9 /* fecit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fecit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A078732BD0E7A400E841B9 /* fecitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fecitApp.swift; sourceTree = "<group>"; };
-		95A078752BD0E7A400E841B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95A078772BD0E7A600E841B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95A0787A2BD0E7A600E841B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95A078A62BD13B9400E841B9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -56,6 +54,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		956B1BDA2BE0BBD20047D5A0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				956B1BDB2BE0BBD70047D5A0 /* App */,
+				956B1BDC2BE0BBE20047D5A0 /* Scenes */,
+				956B1BDD2BE0BBF70047D5A0 /* Extension */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		956B1BDB2BE0BBD70047D5A0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				95A078732BD0E7A400E841B9 /* fecitApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		956B1BDC2BE0BBE20047D5A0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				956B1BE22BE0BD6C0047D5A0 /* Tab */,
+				956B1BDE2BE0BBFE0047D5A0 /* Calendar */,
+				956B1BDF2BE0BC070047D5A0 /* Memo */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		956B1BDD2BE0BBF70047D5A0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		956B1BDE2BE0BBFE0047D5A0 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				95A078812BD0EEA700E841B9 /* Views */,
+				956B1BE12BE0BC8C0047D5A0 /* ViewModels */,
+				956B1BE02BE0BC7A0047D5A0 /* Models */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		956B1BDF2BE0BC070047D5A0 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				95A078AA2BD13D0700E841B9 /* MemoView.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		956B1BE02BE0BC7A0047D5A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				956B1BCF2BDF2A0E0047D5A0 /* YearMonth.swift */,
+				956B1BD42BE0A85F0047D5A0 /* Page.swift */,
+				956B1BD62BE0A8950047D5A0 /* Day.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		956B1BE12BE0BC8C0047D5A0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				956B1BCD2BDF282F0047D5A0 /* CalendarViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		956B1BE22BE0BD6C0047D5A0 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				95A078A62BD13B9400E841B9 /* MainTabView.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		95A078672BD0E7A400E841B9 = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +153,7 @@
 		95A078722BD0E7A400E841B9 /* fecit */ = {
 			isa = PBXGroup;
 			children = (
-				95A078732BD0E7A400E841B9 /* fecitApp.swift */,
-				95A078812BD0EEA700E841B9 /* View */,
+				956B1BDA2BE0BBD20047D5A0 /* Source */,
 				95A078772BD0E7A600E841B9 /* Assets.xcassets */,
 				95A078792BD0E7A600E841B9 /* Preview Content */,
 			);
@@ -91,24 +168,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		95A078812BD0EEA700E841B9 /* View */ = {
+		95A078812BD0EEA700E841B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95A078752BD0E7A400E841B9 /* ContentView.swift */,
-				95A078A62BD13B9400E841B9 /* MainTabView.swift */,
 				95A078A82BD13CFB00E841B9 /* ActionView.swift */,
-				95A078AA2BD13D0700E841B9 /* MemoView.swift */,
 				956B1BC12BD58B9E0047D5A0 /* CalendarHeaderView.swift */,
-				956B1BC32BD595090047D5A0 /* WeekdayView.swift */,
 				956B1BC52BD5A8C20047D5A0 /* CalendarGridView.swift */,
+				956B1BC32BD595090047D5A0 /* WeekdayView.swift */,
 				956B1BC92BD5AE5D0047D5A0 /* MonthDayCell.swift */,
-				956B1BCD2BDF282F0047D5A0 /* CalendarViewModel.swift */,
-				956B1BCF2BDF2A0E0047D5A0 /* YearMonth.swift */,
-				956B1BD42BE0A85F0047D5A0 /* Page.swift */,
-				956B1BD62BE0A8950047D5A0 /* Day.swift */,
-				956B1BD82BE0A9110047D5A0 /* Date+Extensions.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +259,6 @@
 				95A078A92BD13CFB00E841B9 /* ActionView.swift in Sources */,
 				956B1BD92BE0A9110047D5A0 /* Date+Extensions.swift in Sources */,
 				956B1BC62BD5A8C20047D5A0 /* CalendarGridView.swift in Sources */,
-				95A078762BD0E7A400E841B9 /* ContentView.swift in Sources */,
 				956B1BCA2BD5AE5D0047D5A0 /* MonthDayCell.swift in Sources */,
 				95A078742BD0E7A400E841B9 /* fecitApp.swift in Sources */,
 				956B1BCE2BDF282F0047D5A0 /* CalendarViewModel.swift in Sources */,
