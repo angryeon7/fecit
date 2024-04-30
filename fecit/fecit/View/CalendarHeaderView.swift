@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct CalendarHeaderView: View {
-
-    @Binding var currentDate: Date
-    var addWeek: Bool
+    @ObservedObject public var viewModel: CalendarViewModel
 
     var body: some View {
-
         HStack {
             Button {
             } label: {
@@ -24,13 +21,9 @@ struct CalendarHeaderView: View {
             
             Spacer()
 
-            HStack {
-                Text(currentDate.formatted(.dateTime.month(.wide)))
-                Text(currentDate.formatted(.dateTime.year()))
-
-            }
-            .font(.title2)
-            .foregroundColor(.white)
+            Text(viewModel.formattedDate)
+                .foregroundColor(Color.white)
+                .font(.title2)
 
             Spacer()
 
@@ -52,16 +45,4 @@ struct CalendarHeaderView: View {
             .padding(.trailing, 10)
         }.background(Color("MainBlue"))
     }
-    
-    func changeMonth(value: Int) {
-        guard let newMonth = Calendar.current.date(byAdding: .month, value: value, to: currentDate) else {
-            return
-        }
-
-        currentDate = newMonth
-    }
-}
-
-#Preview {
-    CalendarHeaderView(currentDate: .constant(Date()), addWeek: false)
 }

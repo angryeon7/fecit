@@ -11,6 +11,13 @@ final public class CalendarViewModel: ObservableObject {
     @Published public var selectedDate: Date?
     @Published var current: Page
     
+    var formattedDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "MMMM yyyy"
+        return dateFormatter.string(from: Date(year: current.year, month: current.month) ?? Date())
+    }
+    
     private(set) lazy var weekdaySymbols: [String] = DateFormatter().shortWeekdaySymbols
 
     public init(
