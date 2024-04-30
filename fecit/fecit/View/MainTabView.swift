@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selectedTab = 2
+    @State private var selectedTab = 1
     
     init() {
       UITabBar.appearance().scrollEdgeAppearance = .init()
@@ -22,7 +22,9 @@ struct MainTabView: View {
                     Text("Achieve")
                 }
                 .tag(0)
-            ActionView()
+            let dayTimeInterval: TimeInterval = 24 * 60 * 60
+            let viewModel = CalendarViewModel(heighlighted: [.init(timeIntervalSinceNow: dayTimeInterval)])
+            ActionView(viewModel: viewModel)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Action")
@@ -40,7 +42,7 @@ struct MainTabView: View {
                     Text("Library")
                 }
                 .tag(3)
-            ActionView()
+            MemoView()
                 .tabItem {
                     Image(systemName: "square.split.2x2")
                     Text("Achieve")
@@ -53,11 +55,6 @@ struct MainTabView: View {
             UITabBar.appearance().backgroundColor = .white
         }
     }
-}
-
-enum TapType {
-    case memo
-    case action
 }
 
 #Preview {
